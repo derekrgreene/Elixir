@@ -11,9 +11,9 @@ defmodule KV.Bucket do
   @doc """
   Gets a value from the bucket by key.
   """
-    def get(bucket, key) do
-      Agent.get(bucket, &Map.get(&1, key))
-    end
+  def get(bucket, key) do
+    Agent.get(bucket, &Map.get(&1, key))
+  end
 
   @doc """
   Puts the value for the given key in the bucket.
@@ -22,7 +22,7 @@ defmodule KV.Bucket do
     Agent.update(bucket, &Map.put(&1, key, value))
   end
 
-  @doc"""
+  @doc """
   Deletes key from bucket.
 
   Returns he current value of key if key exists.
